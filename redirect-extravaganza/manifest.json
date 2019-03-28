@@ -1,0 +1,28 @@
+{
+  "name": "Redirect Extravaganza",
+  "version": "0.0.1",
+  "description": "Redirect Extravaganza Bonanza",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/embed/*"
+      ],
+      "js": [
+        "js/runtime.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "options_page": "html/options.html",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ]
+}
